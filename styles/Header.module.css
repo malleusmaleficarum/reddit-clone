@@ -1,0 +1,22 @@
+.container {
+  padding: 0.2rem 0.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(248, 248, 248);
+}
+
+.leftside {
+  position: relative;
+}
+
+.leftside img {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.middleside {
+}
+
+.rightside {
+}
