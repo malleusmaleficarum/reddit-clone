@@ -10,20 +10,25 @@ import {
   SpeakerphoneIcon,
   VideoCameraIcon,
   UserIcon,
-  ArrowDownIcon,
 } from "@heroicons/react/outline";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 const Header = () => {
+  const { data: session } = useSession();
+
   return (
     <div className={styles.container}>
       <div className={styles.leftside}>
-        <Image
-          src='https://links.papareact.com/fqy'
-          alt='Logo'
-          width={110}
-          height={35}
-          objectFit='contain'
-        />
+        <Link href='/'>
+          <Image
+            src='https://links.papareact.com/fqy'
+            alt='Logo'
+            width={110}
+            height={35}
+            objectFit='contain'
+          />
+        </Link>
       </div>
       <div className={styles.middleside}>
         <HomeIcon height={23} width={23} />
@@ -54,17 +59,39 @@ const Header = () => {
         <ChevronDownIcon className={styles.icon__icon} />
       </div>
 
-      {/* Log In */}
-      <div className={styles.login}>
-        <Image
-          src='https://links.papareact.com/23l'
-          alt='Reddit'
-          width={20}
-          height={20}
-          objectFit='contain'
-        />
-        <p>Sign In</p>
-      </div>
+      {/* Log In / Log out */}
+
+      {session ? (
+        <div onClick={() => signOut()} className={styles.login}>
+          <Image
+            src='https://links.papareact.com/23l'
+            alt='Reddit'
+            width={20}
+            height={20}
+            objectFit='contain'
+          />
+          <div>
+            <p>{session?.user?.name}</p>
+            <p>Sign Out</p>
+          </div>
+        </div>
+      ) : (
+        <div
+          onClick={() =>
+            signIn("reddit", { callbackUrl: "http://localhost:3000" })
+          }
+          className={styles.login}
+        >
+          <Image
+            src='https://links.papareact.com/23l'
+            alt='Reddit'
+            width={20}
+            height={20}
+            objectFit='contain'
+          />
+          <p>Sign In</p>
+        </div>
+      )}
     </div>
   );
 };

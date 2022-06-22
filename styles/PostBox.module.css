@@ -1,0 +1,84 @@
+.form {
+  margin: 0 auto;
+  padding: 0.5rem;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 7px;
+}
+
+.container {
+  margin-left: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputtext {
+  flex: 1;
+  padding: 0.5rem;
+  padding-left: 1.25rem;
+  background-color: rgb(249 250 251);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.icon {
+  height: 1.5rem;
+  color: rgb(209 213 219);
+  cursor: pointer;
+}
+
+.icon__clicked {
+  color: rgb(147 197 253);
+}
+
+.wrapper {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__container {
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper__container p {
+  min-width: 90px;
+  font-weight: bold;
+}
+
+.wrapper__container input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(239 246 255);
+}
+
+.errors {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  color: rgb(239 68 68);
+}
+
+.button {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: rgb(96 165 250);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+}

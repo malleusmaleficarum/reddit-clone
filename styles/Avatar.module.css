@@ -1,0 +1,16 @@
+.container {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgb(209 213 219);
+}
+
+/* @media (min-width: 1024px) {
+  .container {
+    height: 5rem;
+    width: 5rem;
+  }
+} */
