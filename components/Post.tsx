@@ -8,6 +8,7 @@ import {
   ShareIcon,
 } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useState } from "react";
 import styles from "../styles/Post.module.css";
 import Avatar from "./Avatar";
 
@@ -16,17 +17,30 @@ type Props = {
 };
 
 const Post = ({ post }: Props) => {
-  return (
-    <Link href={`/post/${post}`}>
-      <div className={styles.container}>
-        <div className={styles.leftside}>
-          <ArrowUpIcon className={`${styles.leftside__icon} ${styles.up}`} />
-          <p>0</p>
-          <ArrowDownIcon
-            className={`${styles.leftside__icon} ${styles.down}`}
-          />
-        </div>
+  const [counter, setCounter] = useState(0);
 
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+
+  const decrement = () => {
+    setCounter(counter - 1);
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.leftside}>
+        <ArrowUpIcon
+          className={`${styles.leftside__icon} ${styles.up}`}
+          onClick={increment}
+        />
+        <p>{counter}</p>
+        <ArrowDownIcon
+          className={`${styles.leftside__icon} ${styles.down}`}
+          onClick={decrement}
+        />
+      </div>
+      <Link href={`/post/${post}`}>
         {/* Body */}
         <div className={styles.rightside}>
           {/* Header */}
@@ -78,8 +92,8 @@ const Post = ({ post }: Props) => {
             </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

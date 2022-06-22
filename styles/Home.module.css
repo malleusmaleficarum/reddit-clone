@@ -110,9 +110,87 @@
   margin-left: 0.5rem;
 }
 
+.feedcommunity {
+  display: flex;
+  gap: 10px;
+}
+
+.communitywrapper {
+  position: sticky;
+  top: 110px;
+  margin-top: 0.5rem;
+  height: fit-content;
+  min-width: 300px;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 4px;
+  background-color: white;
+  display: none;
+}
+
+.communitywrapper__title {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  padding-bottom: 0.75rem;
+  background-color: rgb(248 113 113);
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+}
+
+.subreddit {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.subreddit {
+  padding: 0.5rem 1rem;
+  display: flex;
+  border-top-width: 1px;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+.subreddit:hover {
+  background-color: rgb(243 244 246);
+}
+
+.subreddit:last-child {
+  border-bottom-right-radius: 0.25rem; /* 4px */
+  border-bottom-left-radius: 0.25rem; /* 4px */
+}
+
+.arrow {
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  color: rgb(74 222 128);
+}
+
+.topic {
+  flex: 1;
+}
+
+.buttonview {
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgb(59 130 246);
+  color: white;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .communitywrapper {
+    display: inline;
   }
 }

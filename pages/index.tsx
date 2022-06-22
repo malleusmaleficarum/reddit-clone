@@ -1,5 +1,7 @@
+import { ChevronUpIcon } from "@heroicons/react/outline";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Avatar from "../components/Avatar";
 import Feed from "../components/Feed";
 import PostBox from "../components/PostBox";
 import styles from "../styles/Home.module.css";
@@ -14,8 +16,34 @@ const Home: NextPage = () => {
       </Head>
 
       <PostBox />
-      <div>
+      <div className={styles.feedcommunity}>
         <Feed />
+        <div className={styles.communitywrapper}>
+          <p className={styles.communitywrapper__title}>Top Communities</p>
+          <div>
+            <div className={styles.subreddit}>
+              <p>1</p>
+              <ChevronUpIcon className={styles.arrow} />
+              <Avatar />
+              <p className={styles.topic}>r/nextjs</p>
+              <div className={styles.buttonview}>View</div>
+            </div>
+            <div className={styles.subreddit}>
+              <p>2</p>
+              <ChevronUpIcon className={styles.arrow} />
+              <Avatar />
+              <p className={styles.topic}>r/music</p>
+              <div className={styles.buttonview}>View</div>
+            </div>
+            <div className={styles.subreddit}>
+              <p>3</p>
+              <ChevronUpIcon className={styles.arrow} />
+              <Avatar />
+              <p className={styles.topic}>r/art</p>
+              <div className={styles.buttonview}>View</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
